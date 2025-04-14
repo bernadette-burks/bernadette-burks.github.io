@@ -3,7 +3,7 @@ body {
 }
 
 .pink-script {
-  font-family: 'Brush Script MT', cursive;
+  font-family: 'Vladimir Script', cursive;
   font-size: 1.8rem;
   color: hotpink !important;
 }
@@ -16,5 +16,10 @@ header {
   padding: 2rem 1rem;
   background: linear-gradient(to right, #ffe6f0, #ffe6fa);
   border-radius: 1rem;
+  text-align: center;
+}
+
+footer {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
 }
