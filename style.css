@@ -12,6 +12,15 @@ body {
   color: deeppink !important;
 }
 
+.jumbotron {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(to right, #ffe6f0, #ffe6fa);
+  border-radius: 1rem;
+  text-align: center;
+}
+
 header {
   padding: 2rem 1rem;
   background: linear-gradient(to right, #ffe6f0, #ffe6fa);
