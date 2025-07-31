@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bernadette Burks, Data Analyst & Creative Explorer - Projects</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-light text-dark">
@@ -32,51 +34,140 @@
 
 <p>
 
-  <div id="accordion">
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h5 class="mb-0">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          "Then & Now" Coding in R
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<div class="container my-5">
+  <div class="accordion" id="projectsAccordion">
+
+    <!-- Project 1 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <span><i class="bi bi-code-slash me-2 text-primary"></i> "Then & Now" Coding in R</span>
         </button>
-      </h5>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#projectsAccordion">
+        <div class="accordion-body">
+          This project showcases my data refining skills as they’ve grown over time. I revisited a project from my early days at New England College titled <i>Trends in Opioid Misuse and Abuse in the U.S. (2016–2017)</i>. With clinical insight and deeper technical skill, I transformed it using more efficient <code>dplyr</code> pipelines, refined visualizations, and clearer narrative flow.
+
+          <br><br>
+          🧪 Compare for yourself: 
+          <a href="studentversion_burks.rmd" target="_blank" class="text-decoration-underline">Student Version</a> &nbsp;|&nbsp; 
+          <a href="professional-version-link.html" target="_blank" class="text-decoration-underline">Professional Version</a>
+
+          <br><br>
+          This is more than a portfolio piece — it’s a personal evolution in clarity, courage, and refinement.
+        </div>
+      </div>
     </div>
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-      <div class="card-body">
-        This project showcases my data refining skills as they have grown over time. I decided to fine-tune a data project I had completed earlier in my studies at New England College that aligns with my clinical background - <i>Trends in Opioid Misuse and Abuse in the United States Between 2016 and 2017</i>. There is a "student version" and a "professional version". I'm mainly looking for ways to remove redundancy and fine-tune the <i>dyplyr</i> package features for cleaner code and more accessible visualizations. In sharing both my "then" and "now" versions, I hope to reveal something no résumé bullet ever could: the courage to share my own mistakes while revamping and refining them with elegance!
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Collapsible Group Item #2
+    <!-- Project 2 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <i class="bi bi-bar-chart-line-fill me-2 text-success"></i> Data Stories & Visualization
         </button>
-      </h5>
-    </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#projectsAccordion">
+        <div class="accordion-body">
+          In this ongoing series, I explore how visual storytelling can reveal patterns otherwise buried in data. These projects include:
+
+          <ul>
+            <li>💡 A <strong>seasonal trends dashboard</strong> using ggplot2 and plotly</li>
+            <li>🎭 A <strong>mental health insight report</strong> combining clinical intuition with clean, empathetic design</li>
+            <li>🌍 A <strong>geospatial case study</strong> visualizing opioid impact by state using <code>leaflet</code></li>
+          </ul>
+
+          <p>Each visualization is crafted to speak clearly and respectfully — not just to numbers, but to the stories they hold.</p>
+
+          <a href="data-viz-portfolio.html" target="_blank" class="btn btn-outline-success btn-sm">
+            <i class="bi bi-box-arrow-up-right"></i> View Visual Portfolio
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingThree">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Collapsible Group Item #3
+
+    <!-- Project 3 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <i class="bi bi-heart-pulse-fill me-2 text-danger"></i> Clinical Informatics Toolkit
         </button>
-      </h5>
-    </div>
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#projectsAccordion">
+        <div class="accordion-body">
+          With a background in crisis work and a passion for systems thinking, I designed a starter toolkit for **clinical analysts in training**. This includes:
+
+          <ul>
+            <li>📊 <strong>Mock dashboards</strong> for care team performance</li>
+            <li>📝 A <strong>report templating system</strong> in RMarkdown</li>
+            <li>📁 Sample <strong>ETL process in tidyverse</strong> from raw intake to visual summary</li>
+          </ul>
+
+          <p>The goal? Build tools that don't just process data — but illuminate patterns that help care providers serve with clarity, compassion, and insight.</p>
+
+          <a href="clinical-informatics.html" target="_blank" class="btn btn-outline-danger btn-sm">
+            <i class="bi bi-box-arrow-up-right"></i> View Toolkit
+          </a>
+        </div>
       </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          <i class="bi bi-stars me-2 text-warning"></i> Soulful Side Projects
+        </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#projectsAccordion">
+        <div class="accordion-body">
+          These are the dreamy, experimental corners of my digital universe — where logic meets wonder.
+
+          <ul>
+            <li>🎨 A coded gallery of <strong>underwater acrylics</strong> and AI-aided compositions</li>
+            <li>🧠 A concept prototype for <strong>AI companions in therapeutic roles</strong></li>
+            <li>💌 An <strong>interactive birth scroll generator</strong> for visionary baby names</li>
+          </ul>
+
+          <p>Side projects are my creative fuel — a space where data and design become personal, poetic, and playfully strange.</p>
+
+          <a href="side-projects.html" target="_blank" class="btn btn-outline-warning btn-sm">
+            <i class="bi bi-box-arrow-up-right"></i> Explore the Dreamspace
+          </a>
+        </div>
+      </div>
+    </div>
+
+<!-- Project 5: Coming Soon -->
+<div class="accordion-item">
+  <h2 class="accordion-header" id="headingFive">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+      <i class="bi bi-hourglass-split me-2 text-muted"></i> Dreamscapes In Progress
+    </button>
+  </h2>
+  <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#projectsAccordion">
+    <div class="accordion-body text-center">
+
+      <div class="coming-soon">
+        <p>✨ New projects are germinating below the surface...</p>
+        <div class="dot-loader">
+          <span></span><span></span><span></span>
+        </div>
+        <p class="mt-3 fst-italic text-muted">Check back soon for more magic, code, and curiosities.</p>
+      </div>
+
     </div>
   </div>
 </div>
+
+
+  </div>
+</div>
+
+<!-- Bootstrap JS for accordion -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
  <footer class="text-center mt-5 mb-3 text-muted">
     <small>Copyright &copy; 2025 Bernadette Burks</small>
