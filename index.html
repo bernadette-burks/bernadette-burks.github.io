@@ -1,267 +1,731 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Head -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bernadette Burks, Machine Learning (ML) Software Engineer</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
+  <title>Bernadette Burks | Portfolio</title>
 
-<!-- Nav Bar pinned to top -->
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #050505;
+      --card: #111111;
+      --text: #f5f5f5;
+      --muted: #a9a9a9;
+      --accent: #ffffff;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      letter-spacing: 0.5px;
+    }
+
+    .script-text {
+      font-family: 'Parisienne', cursive;
+      font-size: 2.2rem;
+      color: white;
+      opacity: 0.95;
+    }
+
+    .navbar {
+      backdrop-filter: blur(14px);
+      background: rgba(0,0,0,0.7);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    .nav-link {
+      color: rgba(255,255,255,0.8) !important;
+      transition: 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: white !important;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-top: 120px;
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255,255,255,0.06), transparent 25%),
+        #050505;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.2));
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 700;
+      line-height: 0.95;
+    }
+
+    .hero-subtitle {
+      color: var(--muted);
+      font-size: 1.15rem;
+      max-width: 700px;
+      line-height: 1.8;
+    }
+
+    .glow-btn {
+      border: 1px solid white;
+      background: white;
+      color: black;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: 0.3s ease;
+      text-decoration: none;
+    }
+
+    .glow-btn:hover {
+      background: transparent;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .outline-btn {
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .outline-btn:hover {
+      border-color: white;
+      background: rgba(255,255,255,0.08);
+    }
+
+    section {
+      padding: 110px 0;
+      position: relative;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.8rem;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 20px;
+    }
+
+    .section-text {
+      color: var(--muted);
+      line-height: 1.9;
+      max-width: 800px;
+    }
+
+    .glass-card {
+      background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 32px;
+      height: 100%;
+      transition: 0.4s ease;
+      backdrop-filter: blur(12px);
+    }
+
+    .glass-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255,255,255,0.18);
+    }
+
+    .project-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      font-size: 0.8rem;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .project-preview {
+      background: #0d0d0d;
+      border-radius: 18px;
+      padding: 18px;
+      margin-top: 24px;
+      border: 1px solid rgba(255,255,255,0.06);
+      min-height: 180px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .code-line {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      margin-bottom: 12px;
+    }
+
+    .code-line.short {
+      width: 50%;
+    }
+
+    .code-line.medium {
+      width: 75%;
+    }
+
+    .floating-quote {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.2;
+      font-family: 'Cormorant Garamond', serif;
+      opacity: 0.9;
+    }
+
+    .tool-icon {
+      width: 110px;
+      height: 110px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: 0.3s ease;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .tool-icon:hover {
+      transform: translateY(-6px) scale(1.03);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .tool-icon i {
+      font-size: 2rem;
+    }
+
+    .timeline-item {
+      border-left: 1px solid rgba(255,255,255,0.15);
+      padding-left: 24px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: white;
+      position: absolute;
+      left: -6px;
+      top: 6px;
+    }
+
+    .social-link {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: white;
+      text-decoration: none;
+      transition: 0.3s ease;
+      font-size: 1.3rem;
+    }
+
+    .social-link:hover {
+      background: white;
+      color: black;
+      transform: translateY(-4px);
+    }
+
+    .form-control {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: white;
+      padding: 16px;
+      border-radius: 18px;
+    }
+
+    .form-control:focus {
+      background: rgba(255,255,255,0.06);
+      color: white;
+      box-shadow: none;
+      border-color: rgba(255,255,255,0.25);
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 40px 0;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+      animation: float 6s infinite ease-in-out;
+      opacity: 0.4;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-18px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        text-align: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Bernadette Burks, Machine Learning (ML) Software Engineer</a>
+      <a class="navbar-brand" href="#home">Bernadette Burks</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMenu"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tools">Tools</a></li>
+          <li class="nav-item"><a class="nav-link" href="#journey">Journey</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-<section class="hero py-5">
-  <div class="container">
-    <div class="row align-items-center">
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="sparkle" style="top:20%; left:10%;"></div>
+    <div class="sparkle" style="top:70%; left:80%; animation-delay:2s;"></div>
+    <div class="sparkle" style="top:40%; left:60%; animation-delay:4s;"></div>
 
-      <div class="col-lg-7">
-        <h1 class="display-4 fw-bold">
-          Bernadette Burks
-        </h1>
+    <div class="container hero-content">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-8">
+          <p class="script-text mb-2">creative technologist • data explorer • dreamer</p>
 
-        <p class="lead mb-4">
-          I build end-to-end Python applications, machine learning systems,
-          and data-driven tools that combine technical rigor with creativity.
-        </p>
+          <h1 class="mb-4">
+            Building thoughtful,
+            human-centered
+            digital experiences.
+          </h1>
 
-        <a href="projects.html" class="btn btn-dark btn-lg me-2">
-          View Projects
-        </a>
+          <p class="hero-subtitle mb-5">
+            I'm Bernadette — an aspiring data scientist, developer, and artist blending analytical thinking with creativity.
+            I love building projects that feel both intelligent and emotionally alive: machine learning experiments,
+            interactive tools, visual storytelling, and polished web experiences with personality.
+          </p>
 
-        <a href="https://github.com/bernadette-burks" target="_blank"
-           class="btn btn-outline-dark btn-lg">
-          GitHub
-        </a>
+          <div class="d-flex flex-wrap gap-3 hero-buttons">
+            <a href="#projects" class="glow-btn">Explore My Projects</a>
+            <a href="#contact" class="outline-btn">Let's Connect</a>
+          </div>
+        </div>
       </div>
-
-      <div class="col-lg-5 text-center">
-        <img src="ProfilePic2025.jpg"
-             class="img-fluid rounded-circle shadow-lg profile-img"
-             alt="Bernadette Burks">
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Projects Section -->
-<section class="py-5 bg-white">
-  <div class="container">
+  <!-- Featured Projects -->
+  <section id="projects">
+    <div class="container">
+      <p class="section-label">Featured Work</p>
+      <h2 class="section-title">Projects With Curiosity & Character</h2>
+      <p class="section-text mb-5">
+        These projects reflect where my technical interests and creative energy meet — from machine learning pipelines and AI experimentation to atmospheric interfaces and data-driven storytelling.
+      </p>
 
-    <h2 class="text-center mb-5 fw-bold">
-      Featured Projects
-    </h2>
+      <div class="row g-4">
 
-    <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="glass-card">
+            <div class="d-flex justify-content-between align-items-start mb-4">
+              <div>
+                <h3>UFO Intelligence Project</h3>
+                <p class="text-secondary mb-0">Data Science • NLP • Research</p>
+              </div>
+              <i class="bi bi-stars fs-2"></i>
+            </div>
 
-      <!-- Project Card -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card project-card h-100 shadow-sm border-0">
-
-          <div class="card-body d-flex flex-column">
-
-            <h4 class="card-title">
-              UFO Credibility Analyzer
-            </h4>
-
-            <p class="card-text">
-              Machine learning system designed to analyze and classify
-              UFO sighting credibility using NLP and metadata analysis.
+            <p class="section-text">
+              A future-facing machine learning project focused on organizing, analyzing, and visualizing UFO sighting data with classification models and natural language processing.
             </p>
 
-            <div class="mb-3">
-              <span class="badge bg-dark">Python</span>
-              <span class="badge bg-secondary">NLP</span>
-              <span class="badge bg-secondary">Scikit-Learn</span>
+            <div class="mt-4">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">Scikit-learn</span>
+              <span class="project-tag">NLP</span>
             </div>
 
-            <div class="mt-auto">
-              <a href="https://github.com/YOURUSERNAME/ufo-project"
-                 class="btn btn-outline-dark btn-sm">
-                 GitHub Repo
-              </a>
-            </div>
+            <div class="project-preview">
+              <div class="code-line"></div>
+              <div class="code-line medium"></div>
+              <div class="code-line short"></div>
 
+              <div class="mt-4 p-3 rounded-4 border border-secondary-subtle">
+                <small class="text-secondary">MODEL CONFIDENCE</small>
+                <h4 class="mt-2">92.4%</h4>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-<!-- Project Card -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card project-card h-100 shadow-sm border-0">
+        <div class="col-lg-6">
+          <div class="glass-card">
+            <div class="d-flex justify-content-between align-items-start mb-4">
+              <div>
+                <h3>Deep Learning Experiments</h3>
+                <p class="text-secondary mb-0">Computer Vision • Neural Networks</p>
+              </div>
+              <i class="bi bi-cpu fs-2"></i>
+            </div>
 
-          <div class="card-body d-flex flex-column">
-
-            <h4 class="card-title">
-              HTML to PDF Converter
-            </h4>
-
-            <p class="card-text">
-              A lightweight Python utility that converts webpages into PDF files using pyhtml2pdf.
+            <p class="section-text">
+              Explorations into image classification, dataset optimization, and training workflows — focused on understanding how neural networks learn and evolve.
             </p>
 
-            <div class="mb-3">
-              <span class="badge bg-dark">Python</span>
-              <span class="badge bg-secondary">pyhtml2pdf</span>
-              <span class="badge bg-secondary">tqdm</span>
+            <div class="mt-4">
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">TensorFlow</span>
+              <span class="project-tag">Jupyter</span>
+              <span class="project-tag">CNNs</span>
             </div>
 
-            <div class="mt-auto">
-              <a href="https://github.com/bernadette-burks/HTMLPDFConverter"
-                 class="btn btn-outline-dark btn-sm">
-                 GitHub Repo
-              </a>
+            <div class="project-preview d-flex align-items-center justify-content-center">
+              <div class="text-center">
+                <i class="bi bi-diagram-3 fs-1 mb-3"></i>
+                <p class="text-secondary mb-0">Training visualizations, experimentation logs,
+                  and modular ML architecture.
+                </p>
+              </div>
             </div>
-
           </div>
         </div>
+
       </div>
-
-
-      <!-- Project Card -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card project-card h-100 shadow-sm border-0">
-
-          <div class="card-body d-flex flex-column">
-
-            <h4 class="card-title">
-              Disease Prediction Model
-            </h4>
-
-            <p class="card-text">
-              Machine learning model of clinical symptoms to determine likelihood of certain diseases using scikit-learn classification.
-            </p>
-
-            <div class="mb-3">
-              <span class="badge bg-dark">Python</span>
-              <span class="badge bg-secondary">Classification</span>
-              <span class="badge bg-secondary">Machine Learning</span>
-            </div>
-
-            <div class="mt-auto">
-              <a href="https://github.com/bernadette-burks/DiseasePrediction"
-                 class="btn btn-outline-dark btn-sm">
-                 GitHub Repo
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-
-      <!-- Project Card -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card project-card h-100 shadow-sm border-0">
-
-          <div class="card-body d-flex flex-column">
-
-            <h4 class="card-title">
-              Melanoma Detection
-            </h4>
-
-            <p class="card-text">
-              Determine if a skin lesion appears Benign (0) or Malignant (1) using a Convolutional Neural Network (CNN) Computer Vision AI Model Using Pytorch/Torchvision NN Modules.
-            </p>
-
-            <div class="mb-3">
-              <span class="badge bg-dark">Python</span>
-              <span class="badge bg-secondary">CNN</span>
-              <span class="badge bg-secondary">PyTorch</span>
-            </div>
-
-            <div class="mt-auto">
-              <a href="https://github.com/bernadette-burks/Melanoma"
-                 class="btn btn-outline-dark btn-sm">
-                 GitHub Repo
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-
-      <!-- Project Card -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card project-card h-100 shadow-sm border-0">
-
-          <div class="card-body d-flex flex-column">
-
-            <h4 class="card-title">
-              UBI Maine
-            </h4>
-
-            <p class="card-text">
-              Data Analysis and Visualizations in Support of Universal Basic Income (UBI) for Maine, USA Residents.
-            </p>
-
-            <div class="mb-3">
-              <span class="badge bg-dark">Python</span>
-              <span class="badge bg-secondary">Machine Learning</span>
-              <span class="badge bg-secondary">Regression Analysis</span>
-            </div>
-
-            <div class="mt-auto">
-              <a href="https://github.com/bernadette-burks/UBI-Maine"
-                 class="btn btn-outline-dark btn-sm">
-                 GitHub Repo
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-
-      <!-- Project Card -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card project-card h-100 shadow-sm border-0">
-
-          <div class="card-body d-flex flex-column">
-
-            <h4 class="card-title">
-              GalaxyHop
-            </h4>
-
-            <p class="card-text">
-              Virtually "hop" to various locations in our galaxy to see the local weather and your physical stats and enjoy a 3D immersive viewer. Built using Python, Customtkinter, and API fetches.
-            </p>
-
-            <div class="mb-3">
-              <span class="badge bg-dark">Python</span>
-              <span class="badge bg-secondary">Customtkinter</span>
-              <span class="badge bg-secondary">API</span>
-            </div>
-
-            <div class="mt-auto">
-              <a href="https://github.com/bernadette-burks/GalaxyHop"
-                 class="btn btn-outline-dark btn-sm">
-                 GitHub Repo
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Contact Section -->
-  <footer class="text-center mt-5 mb-3 text-muted">
-    <small>Copyright &copy; 2026 Bernadette Burks</small>
+  <!-- Quote Banner -->
+  <section>
+    <div class="container">
+      <div class="glass-card text-center py-5">
+        <p class="script-text">A little Bernadette sparkle ✨</p>
+        <div class="floating-quote mt-3">
+          “I want technology to feel intelligent, beautiful,
+          emotionally resonant, and deeply human.”
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <p class="section-label">About Me</p>
+          <h2 class="section-title">Technical Curiosity Meets Creative Energy</h2>
+
+          <p class="section-text mb-4">
+            My background spans IT, data science, digital problem-solving, and creative work. I love exploring how systems work beneath the surface — whether that means debugging code, training machine learning models, organizing messy datasets, or designing interfaces that feel polished and intuitive.
+          </p>
+
+          <p class="section-text mb-4">
+            Outside of programming, I paint underwater dreamscapes, dance, study emerging technology, and imagine new ways humans might interact with AI in the future. I care deeply about thoughtful design, emotional intelligence in technology, and building projects that feel alive rather than sterile.
+          </p>
+
+          <p class="section-text">
+            This portfolio is intentionally personal. I wanted it to feel elegant and professional while still carrying warmth, personality, and a little bit of cosmic curiosity.
+          </p>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="glass-card h-100 d-flex flex-column justify-content-center">
+            <h3 class="mb-4">Current Focus Areas</h3>
+
+            <div class="d-flex justify-content-between border-bottom border-secondary-subtle py-3">
+              <span>Machine Learning</span>
+              <span class="text-secondary">Growing</span>
+            </div>
+
+            <div class="d-flex justify-content-between border-bottom border-secondary-subtle py-3">
+              <span>Frontend Development</span>
+              <span class="text-secondary">Design-Driven</span>
+            </div>
+
+            <div class="d-flex justify-content-between border-bottom border-secondary-subtle py-3">
+              <span>Data Visualization</span>
+              <span class="text-secondary">Interactive</span>
+            </div>
+
+            <div class="d-flex justify-content-between border-bottom border-secondary-subtle py-3">
+              <span>AI Research & UX</span>
+              <span class="text-secondary">Experimental</span>
+            </div>
+
+            <div class="d-flex justify-content-between py-3">
+              <span>Creative Coding</span>
+              <span class="text-secondary">Favorite</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section id="tools">
+    <div class="container">
+      <p class="section-label">Languages & Tools</p>
+      <h2 class="section-title">Tech Stack</h2>
+
+      <div class="row g-4 mt-2 justify-content-center">
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="tool-icon mx-auto">
+            <i class="bi bi-filetype-py"></i>
+            <span>Python</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="tool-icon mx-auto">
+            <i class="bi bi-filetype-html"></i>
+            <span>HTML5</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="tool-icon mx-auto">
+            <i class="bi bi-filetype-css"></i>
+            <span>CSS3</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="tool-icon mx-auto">
+            <i class="bi bi-bootstrap"></i>
+            <span>Bootstrap</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="tool-icon mx-auto">
+            <i class="bi bi-github"></i>
+            <span>GitHub</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="tool-icon mx-auto">
+            <i class="bi bi-bar-chart-line"></i>
+            <span>Pandas</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey -->
+  <section id="journey">
+    <div class="container">
+      <p class="section-label">Journey</p>
+      <h2 class="section-title">What I'm Building Toward</h2>
+
+      <div class="row mt-5">
+        <div class="col-lg-8 mx-auto">
+
+          <div class="timeline-item">
+            <h4>Exploring Data Science & Machine Learning</h4>
+            <p class="section-text mb-0">
+              Building projects focused on NLP, neural networks, classification models, and real-world experimentation.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h4>Creating More Interactive Web Experiences</h4>
+            <p class="section-text mb-0">
+              Combining clean frontend development with cinematic, emotionally resonant design.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h4>Developing a Cohesive Technical Portfolio</h4>
+            <p class="section-text mb-0">
+              Turning curiosity-driven learning into polished projects that showcase both technical growth and personality.
+            </p>
+          </div>
+
+          <div class="timeline-item mb-0">
+            <h4>Long-Term Vision</h4>
+            <p class="section-text mb-0">
+              Remote work, creative freedom, meaningful AI exploration, and a life designed around curiosity, art, nature, and independent learning.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="row gy-5 align-items-center">
+
+        <div class="col-lg-5">
+          <p class="section-label">Connect</p>
+          <h2 class="section-title">Let's Build Something Interesting</h2>
+
+          <p class="section-text mb-5">
+            Whether you'd like to collaborate, talk about data science, exchange project ideas, or just say hello — I'd genuinely love to hear from you.
+          </p>
+
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="https://github.com/yourusername" class="social-link" target="_blank">
+              <i class="bi bi-github"></i>
+            </a>
+
+            <a href="https://linkedin.com" class="social-link" target="_blank">
+              <i class="bi bi-linkedin"></i>
+            </a>
+
+            <a href="mailto:your@email.com" class="social-link">
+              <i class="bi bi-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="glass-card">
+            <form>
+              <div class="row g-4">
+
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Your Name">
+                </div>
+
+                <div class="col-md-6">
+                  <input type="email" class="form-control" placeholder="Your Email">
+                </div>
+
+                <div class="col-12">
+                  <input type="text" class="form-control" placeholder="Subject">
+                </div>
+
+                <div class="col-12">
+                  <textarea rows="6" class="form-control" placeholder="Your Message"></textarea>
+                </div>
+
+                <div class="col-12">
+                  <button type="submit" class="glow-btn border-0">
+                    Send Message
+                  </button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <div>
+        © 2026 Bernadette Burks — Designed with curiosity & caffeine.
+      </div>
+
+      <div class="script-text" style="font-size:1.5rem;">
+        thanks for visiting ♡
+      </div>
+    </div>
   </footer>
 
-  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
